@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  node:
+    container_name: node_sever
+    restart: always
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8888:8888
+    volumes:
+      - ./:/code
+    command: nodemon server.js
